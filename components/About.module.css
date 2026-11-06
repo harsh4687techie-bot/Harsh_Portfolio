@@ -1,0 +1,168 @@
+.aboutSection {
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--border-light);
+}
+
+.editorialGrid {
+  display: grid;
+  grid-template-columns: 1.05fr 1.15fr;
+  gap: 64px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .editorialGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* Left Column */
+.leadCol {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.leadParagraph {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text-black);
+  letter-spacing: -0.025em;
+}
+
+.taglineBox {
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-warm);
+  border: 1px solid var(--border-light);
+  border-left: 3px solid var(--text-black);
+}
+
+.taglineLabel {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.taglineText {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  margin: 0;
+  font-style: italic;
+}
+
+.leadMeta {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding-top: 10px;
+}
+
+.metaStat {
+  display: flex;
+  flex-direction: column;
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-black);
+  letter-spacing: -0.03em;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Right Column */
+.narrativeCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.paragraph {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text-charcoal);
+}
+
+.leadershipList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.leadershipItem {
+  padding: 18px 20px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-warm);
+  border: 1px solid var(--border-light);
+}
+
+.itemHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.orgTitle {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-black);
+  margin: 0;
+}
+
+.roleBadge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  background-color: var(--text-black);
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.orgDesc {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.principlesRow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.principleItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.checkIcon {
+  color: var(--accent-blue);
+  flex-shrink: 0;
+}

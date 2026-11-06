@@ -1,0 +1,146 @@
+.educationSection {
+  background-color: var(--bg-warm);
+  border-top: 1px solid var(--border-light);
+}
+
+.eduCard {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.degreeBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-soft);
+  color: var(--text-charcoal);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+
+.degreeTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 800;
+  color: var(--text-black);
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.institutionName {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.metaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.metaIcon {
+  color: var(--text-black);
+  flex-shrink: 0;
+}
+
+.descriptionText {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-charcoal);
+}
+
+.disciplinesBox {
+  padding: 22px 24px;
+  background-color: var(--bg-warm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.disciplinesHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.bookIcon {
+  color: var(--text-black);
+}
+
+.disciplinesTitle {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-black);
+  letter-spacing: -0.01em;
+}
+
+.disciplinesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 840px) {
+  .disciplinesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .disciplinesGrid {
+    grid-template-columns: 1fr;
+  }
+  .eduCard {
+    padding: 24px 20px;
+  }
+}
+
+.disciplineItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-charcoal);
+}
+
+.checkIcon {
+  color: var(--accent-blue);
+  flex-shrink: 0;
+}

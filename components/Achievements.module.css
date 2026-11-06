@@ -1,0 +1,264 @@
+.credentialsSection {
+  background-color: var(--bg-warm);
+  border-top: 1px solid var(--border-light);
+}
+
+/* Spotlight Card */
+.spotlightCard {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-grey);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.spotlightMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.spotlightHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.spotlightBadge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  background-color: var(--text-black);
+  color: #FFFFFF;
+  border-radius: var(--radius-xs);
+  width: fit-content;
+}
+
+.spotlightTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 800;
+  color: var(--text-black);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.spotlightSubtitle {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.spotlightMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.metaIcon {
+  color: var(--text-black);
+}
+
+.spotlightDesc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--text-charcoal);
+  margin: 0;
+}
+
+.spotlightActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* Filter Navigation */
+.filterBar {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.filterList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.filterBtn:hover {
+  border-color: var(--text-black);
+  color: var(--text-black);
+}
+
+.filterBtnActive {
+  background-color: var(--text-black);
+  border-color: var(--text-black);
+  color: #FFFFFF;
+}
+
+.filterCount {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+/* Credentials Grid */
+.credentialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.credCard {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  transition: all var(--transition-fast);
+}
+
+.credCard:hover {
+  border-color: var(--text-black);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.credTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.typeBadge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-soft);
+  color: var(--text-black);
+}
+
+.credCategory {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.credDate {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-light-grey);
+}
+
+.credContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.credOrg {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.credTitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-black);
+  letter-spacing: -0.015em;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.credDesc {
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.credActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-warm);
+  border: 1px solid var(--border-light);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-black);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.actionBtn:hover {
+  background-color: var(--text-black);
+  color: #FFFFFF;
+  border-color: var(--text-black);
+}
+
+@media (max-width: 640px) {
+  .spotlightCard {
+    padding: 24px 20px;
+  }
+}

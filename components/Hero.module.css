@@ -1,0 +1,349 @@
+.heroSection {
+  background-color: var(--bg-warm);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: calc(var(--header-height) + 20px);
+  padding-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  position: relative;
+}
+
+/* Massive Signature Name Typography */
+.nameHeader {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: -50px;
+  position: relative;
+  z-index: 1;
+}
+
+.massiveName {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 9.5vw, 9.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.firstNameOutlined {
+  -webkit-text-stroke: clamp(1.5px, 0.2vw, 2.5px) var(--text-black);
+  color: transparent;
+  font-weight: 800;
+  transition: all var(--transition-fast);
+}
+
+.lastNameSolid {
+  color: var(--text-black);
+  font-weight: 900;
+}
+
+/* 3-Column Stage Grid */
+.stageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1fr;
+  align-items: flex-end;
+  gap: 32px;
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+/* Left Column */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 24px;
+}
+
+.roleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.roleLabel {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.roleTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 800;
+  color: var(--text-black);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.roleSubtitle {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.introParagraph {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-charcoal);
+  max-width: 320px;
+}
+
+.leftActions {
+  padding-top: 4px;
+}
+
+/* Center Column: Portrait */
+.centerCol {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  z-index: 3;
+}
+
+.portraitWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portraitFrame {
+  width: 100%;
+  height: clamp(380px, 48vh, 560px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.portraitImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: grayscale(100%) contrast(105%);
+  transition: filter var(--transition-smooth);
+}
+
+.portraitImage:hover {
+  filter: grayscale(0%) contrast(100%);
+}
+
+.portraitGradientFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, var(--bg-warm) 0%, rgba(247, 247, 245, 0) 100%);
+  pointer-events: none;
+}
+
+/* Right Column */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 24px;
+  padding-bottom: 24px;
+}
+
+.socialBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.socialHeader {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.socialList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.socialItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-charcoal);
+  transition: all var(--transition-fast);
+}
+
+.socialItem:hover {
+  border-color: var(--text-black);
+  color: var(--text-black);
+  transform: translateX(-3px);
+}
+
+.socialDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+  transition: background-color var(--transition-fast);
+}
+
+.socialItem:hover .socialDot {
+  background-color: var(--accent-blue);
+}
+
+.socialArrow {
+  color: var(--text-muted);
+  transition: transform var(--transition-fast);
+}
+
+.socialItem:hover .socialArrow {
+  transform: translate(2px, -2px);
+  color: var(--text-black);
+}
+
+.locationPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background-color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-light);
+}
+
+.locationDot {
+  color: var(--border-grey);
+}
+
+/* Scroll Cue */
+.scrollCue {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.scrollBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background-color: transparent;
+}
+
+.scrollBtn:hover {
+  color: var(--text-black);
+  transform: translateY(2px);
+}
+
+.scrollArrow {
+  transition: transform 0.3s ease;
+}
+
+.scrollBtn:hover .scrollArrow {
+  transform: translateY(3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1080px) {
+  .stageGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .centerCol {
+    order: 3;
+    grid-column: span 2;
+    margin-top: -20px;
+  }
+  .leftCol {
+    order: 1;
+  }
+  .rightCol {
+    order: 2;
+    align-items: flex-start;
+  }
+  .socialBlock {
+    align-items: flex-start;
+  }
+  .socialList {
+    align-items: flex-start;
+  }
+  .nameHeader {
+    margin-bottom: -20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stageGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .centerCol {
+    grid-column: span 1;
+    order: 2;
+  }
+  .leftCol {
+    order: 1;
+  }
+  .rightCol {
+    order: 3;
+  }
+  .portraitFrame {
+    height: 380px;
+  }
+  .massiveName {
+    white-space: normal;
+    font-size: clamp(2.4rem, 12vw, 4.4rem);
+  }
+  .nameHeader {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="60%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="mo-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+    <linearGradient id="mo-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F472B6" />
+      <stop offset="100%" stop-color="#DB2777" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#mo-bg)" rx="16"/>
+  <!-- Circular Aperture Iris Pattern in Background -->
+  <g opacity="0.15" stroke="#38BDF8" stroke-width="2" fill="none">
+    <circle cx="650" cy="150" r="120"/>
+    <circle cx="650" cy="150" r="80"/>
+    <line x1="650" y1="30" x2="650" y2="270"/>
+    <line x1="530" y1="150" x2="770" y2="150"/>
+  </g>
+  <!-- Main Frame -->
+  <rect x="140" y="70" width="520" height="360" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+  <!-- Frame Header -->
+  <rect x="140" y="70" width="520" height="46" rx="14" fill="#1E293B" />
+  <circle cx="170" cy="93" r="5" fill="#EF4444" opacity="0.8"/>
+  <circle cx="190" cy="93" r="5" fill="#F59E0B" opacity="0.8"/>
+  <circle cx="210" cy="93" r="5" fill="#10B981" opacity="0.8"/>
+  <text x="400" y="98" text-anchor="middle" fill="#94A3B8" font-family="monospace" font-size="12" letter-spacing="1">MOMENTIFY // MEDIA CURATION &amp; TIMELINE PLATFORM</text>
+
+  <!-- Photo Media Cards Grid -->
+  <g transform="translate(170, 135)">
+    <!-- Photo Card 1 -->
+    <rect x="0" y="0" width="140" height="115" rx="8" fill="#1E293B" stroke="#2563EB" stroke-width="1.5"/>
+    <rect x="10" y="10" width="120" height="65" rx="4" fill="#0F172A"/>
+    <!-- Mountain / Sun vector thumbnail -->
+    <polygon points="25,65 55,30 85,65" fill="#2563EB" opacity="0.8"/>
+    <polygon points="65,65 95,40 120,65" fill="#38BDF8" opacity="0.6"/>
+    <circle cx="40" cy="25" r="7" fill="#FBBF24"/>
+    <text x="12" y="92" fill="#FFFFFF" font-family="sans-serif" font-size="10" font-weight="bold">Mountain Trek 2026</text>
+    <text x="12" y="105" fill="#94A3B8" font-family="monospace" font-size="9">4.2 MB • Exif Indexed</text>
+
+    <!-- Photo Card 2 -->
+    <rect x="155" y="0" width="140" height="115" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <rect x="165" y="10" width="120" height="65" rx="4" fill="#0F172A"/>
+    <!-- City lights / Architecture thumbnail -->
+    <rect x="180" y="35" width="20" height="35" fill="#64748B"/>
+    <rect x="210" y="25" width="30" height="45" fill="#2563EB"/>
+    <rect x="250" y="40" width="20" height="30" fill="#38BDF8"/>
+    <text x="167" y="92" fill="#FFFFFF" font-family="sans-serif" font-size="10" font-weight="bold">Campus Tech Summit</text>
+    <text x="167" y="105" fill="#94A3B8" font-family="monospace" font-size="9">8.6 MB • 4K HDR</text>
+
+    <!-- Photo Card 3 -->
+    <rect x="310" y="0" width="145" height="115" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <rect x="320" y="10" width="125" height="65" rx="4" fill="#0F172A"/>
+    <!-- Audio wave / Moment thumbnail -->
+    <path d="M 335 45 Q 350 20 365 45 T 395 45 T 425 45" fill="none" stroke="#F472B6" stroke-width="2.5"/>
+    <text x="322" y="92" fill="#FFFFFF" font-family="sans-serif" font-size="10" font-weight="bold">Voice Memo Snippet</text>
+    <text x="322" y="105" fill="#F472B6" font-family="monospace" font-size="9">Audio Sync • 0:45s</text>
+  </g>
+
+  <!-- Timeline / Metadata Stream -->
+  <g transform="translate(170, 270)">
+    <rect x="0" y="0" width="455" height="140" rx="8" fill="#111827" stroke="#334155" stroke-width="1"/>
+    <text x="20" y="28" fill="#38BDF8" font-family="monospace" font-size="11">TIMELINE CLUSTER #2026-Q3 • Auto-Generated Album</text>
+    <text x="20" y="46" fill="#94A3B8" font-family="monospace" font-size="10">Geo-Location: Navi Mumbai, MH • 142 items indexed • Deduplication: 99.4%</text>
+    <line x1="20" y1="58" x2="435" y2="58" stroke="#1F2937" stroke-width="1"/>
+    <!-- Storage & Encryption Stats -->
+    <text x="20" y="78" fill="#34D399" font-family="monospace" font-size="11">STORAGE PIPELINE: Client-Side WebP Compression + S3 Storage</text>
+    <text x="20" y="96" fill="#94A3B8" font-family="monospace" font-size="10">Zero-loss metadata preservation • End-to-end encrypted sharing token</text>
+    <line x1="20" y1="108" x2="435" y2="108" stroke="#1F2937" stroke-width="1"/>
+    <text x="20" y="126" fill="#A5B4FC" font-family="monospace" font-size="9">STACK: Next.js + Node.js REST API + PostgreSQL Blob Metadata</text>
+  </g>
+</svg>

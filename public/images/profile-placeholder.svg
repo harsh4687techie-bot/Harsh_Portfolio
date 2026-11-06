@@ -1,0 +1,40 @@
+<svg width="600" height="750" viewBox="0 0 600 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="600" y2="750" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="blueGlow" x1="150" y1="200" x2="450" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.05" />
+    </linearGradient>
+    <linearGradient id="strokeGrad" x1="100" y1="100" x2="500" y2="650" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="600" height="750" fill="url(#bgGrad)" />
+  <circle cx="300" cy="320" r="180" fill="url(#blueGlow)" />
+
+  <!-- Geometric Grid Accent -->
+  <path d="M50 150H550M50 300H550M50 450H550M50 600H550" stroke="#334155" stroke-width="1" stroke-dasharray="4 6" opacity="0.4"/>
+  <path d="M150 50V700M300 50V700M450 50V700" stroke="#334155" stroke-width="1" stroke-dasharray="4 6" opacity="0.4"/>
+
+  <!-- Minimal Silhouette Head & Torso -->
+  <circle cx="300" cy="270" r="90" fill="#1E293B" stroke="url(#strokeGrad)" stroke-width="3" />
+  <path d="M140 560C140 450 210 395 300 395C390 395 460 450 460 560V640H140V560Z" fill="#1E293B" stroke="url(#strokeGrad)" stroke-width="3" />
+
+  <!-- Code / Tech Emblems -->
+  <circle cx="300" cy="270" r="45" fill="#0F172A" stroke="#2563EB" stroke-width="2" />
+  <text x="300" y="278" font-family="'JetBrains Mono', monospace" font-size="24" font-weight="700" fill="#38BDF8" text-anchor="middle">&lt;/&gt;</text>
+
+  <!-- Badge Card at Bottom -->
+  <rect x="80" y="620" width="440" height="80" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+  <circle cx="120" cy="660" r="8" fill="#34D399" />
+  <text x="145" y="654" font-family="'Inter', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">Harshvardhan Shinde</text>
+  <text x="145" y="674" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="500" fill="#94A3B8">Profile Photograph Slot • Ready for Upload</text>
+</svg>
+

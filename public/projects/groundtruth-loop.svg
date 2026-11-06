@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gt-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E1B4B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="gt-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#4F46E5" />
+    </linearGradient>
+    <linearGradient id="gt-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#gt-bg)" rx="16"/>
+  <!-- Neural Network Mesh in Background -->
+  <g stroke="#334155" stroke-width="1" opacity="0.3">
+    <line x1="80" y1="100" x2="250" y2="180"/>
+    <line x1="80" y1="250" x2="250" y2="180"/>
+    <line x1="80" y1="400" x2="250" y2="320"/>
+    <line x1="250" y1="180" x2="550" y2="250"/>
+    <line x1="250" y1="320" x2="550" y2="250"/>
+    <line x1="550" y1="250" x2="720" y2="180"/>
+    <line x1="550" y1="250" x2="720" y2="320"/>
+  </g>
+  <!-- Main Frame -->
+  <rect x="140" y="70" width="520" height="360" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+  <!-- Frame Header -->
+  <rect x="140" y="70" width="520" height="46" rx="14" fill="#1E293B" />
+  <circle cx="170" cy="93" r="5" fill="#EF4444" opacity="0.8"/>
+  <circle cx="190" cy="93" r="5" fill="#F59E0B" opacity="0.8"/>
+  <circle cx="210" cy="93" r="5" fill="#10B981" opacity="0.8"/>
+  <text x="400" y="98" text-anchor="middle" fill="#94A3B8" font-family="monospace" font-size="12" letter-spacing="1">GROUNDTRUTH LOOP // AI MODEL CALIBRATION &amp; HITL</text>
+
+  <!-- Interactive Loop Flow Diagram -->
+  <g transform="translate(170, 140)">
+    <!-- Stage 1: Prediction Ingestion -->
+    <rect x="0" y="0" width="130" height="70" rx="8" fill="#1E293B" stroke="#818CF8" stroke-width="1.5"/>
+    <text x="65" y="24" text-anchor="middle" fill="#A5B4FC" font-family="monospace" font-size="10" font-weight="bold">AI PREDICTION</text>
+    <text x="65" y="44" text-anchor="middle" fill="#FFFFFF" font-family="sans-serif" font-size="11">Confidence: 0.72</text>
+    <text x="65" y="58" text-anchor="middle" fill="#F59E0B" font-family="monospace" font-size="9">Threshold: &lt; 0.85</text>
+
+    <!-- Arrow 1 -->
+    <path d="M 130 35 L 165 35" stroke="#818CF8" stroke-width="2" marker-end="url(#arrow)"/>
+    <polygon points="165,31 173,35 165,39" fill="#818CF8"/>
+
+    <!-- Stage 2: Human In The Loop Review -->
+    <rect x="175" y="0" width="130" height="70" rx="8" fill="#1E293B" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="240" y="24" text-anchor="middle" fill="#38BDF8" font-family="monospace" font-size="10" font-weight="bold">HITL VERIFY</text>
+    <text x="240" y="44" text-anchor="middle" fill="#FFFFFF" font-family="sans-serif" font-size="11">Auditor Review</text>
+    <text x="240" y="58" text-anchor="middle" fill="#34D399" font-family="monospace" font-size="9">Class: GroundTruth</text>
+
+    <!-- Arrow 2 -->
+    <path d="M 305 35 L 340 35" stroke="#2563EB" stroke-width="2"/>
+    <polygon points="340,31 348,35 340,39" fill="#2563EB"/>
+
+    <!-- Stage 3: Dataset Retraining / Fine-Tuning -->
+    <rect x="350" y="0" width="110" height="70" rx="8" fill="#1E293B" stroke="#10B981" stroke-width="1.5"/>
+    <text x="405" y="24" text-anchor="middle" fill="#34D399" font-family="monospace" font-size="10" font-weight="bold">RE-CALIBRATE</text>
+    <text x="405" y="44" text-anchor="middle" fill="#FFFFFF" font-family="sans-serif" font-size="11">Loss: -0.042</text>
+    <text x="405" y="58" text-anchor="middle" fill="#6EE7B7" font-family="monospace" font-size="9">Epoch 24 Saved</text>
+
+    <!-- Feedback Return Curve (Loop back) -->
+    <path d="M 405 70 C 405 110, 65 110, 65 70" fill="none" stroke="url(#gt-cyan)" stroke-width="2" stroke-dasharray="6 4"/>
+    <polygon points="61,72 65,65 69,72" fill="#38BDF8"/>
+    <text x="240" y="105" text-anchor="middle" fill="#38BDF8" font-family="monospace" font-size="9">CONTINUOUS EVALUATION FEEDBACK LOOP</text>
+  </g>
+
+  <!-- Metrics / Real-Time Audit Feed -->
+  <g transform="translate(170, 275)">
+    <rect x="0" y="0" width="460" height="135" rx="8" fill="#111827" stroke="#334155" stroke-width="1"/>
+    <text x="20" y="28" fill="#A5B4FC" font-family="monospace" font-size="11">SAMPLE #49102 • Sentiment &amp; Entity Extractor</text>
+    <text x="20" y="46" fill="#94A3B8" font-family="monospace" font-size="10">Model: Transformer-Mini • Uncertainty: HIGH (Entropy: 0.812)</text>
+    <line x1="20" y1="58" x2="440" y2="58" stroke="#1F2937" stroke-width="1"/>
+    <text x="20" y="78" fill="#34D399" font-family="monospace" font-size="11">HUMAN RESOLUTION • Re-labeled as Positive Intent</text>
+    <text x="20" y="96" fill="#94A3B8" font-family="monospace" font-size="10">Benchmark Accuracy: 94.1% → 96.8% post-calibration batch #12</text>
+    <line x1="20" y1="108" x2="440" y2="108" stroke="#1F2937" stroke-width="1"/>
+    <text x="20" y="125" fill="#38BDF8" font-family="monospace" font-size="9">PIPELINE: FastAPI + PyTorch Inference Validator</text>
+  </g>
+</svg>

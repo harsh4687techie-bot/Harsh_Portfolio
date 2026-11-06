@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ost-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="60%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="ost-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+    <linearGradient id="ost-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#ost-bg)" rx="16"/>
+  <!-- Highway Road Grid Lines in background -->
+  <g stroke="#334155" stroke-width="1.5" opacity="0.3">
+    <line x1="0" y1="450" x2="800" y2="450" stroke-dasharray="15 15"/>
+    <line x1="0" y1="490" x2="800" y2="490"/>
+  </g>
+  <!-- Main Frame -->
+  <rect x="140" y="70" width="520" height="360" rx="14" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+  <!-- Frame Header -->
+  <rect x="140" y="70" width="520" height="46" rx="14" fill="#1E293B" />
+  <circle cx="170" cy="93" r="5" fill="#EF4444" opacity="0.8"/>
+  <circle cx="190" cy="93" r="5" fill="#F59E0B" opacity="0.8"/>
+  <circle cx="210" cy="93" r="5" fill="#10B981" opacity="0.8"/>
+  <text x="400" y="98" text-anchor="middle" fill="#94A3B8" font-family="monospace" font-size="12" letter-spacing="1">OM SAI TRANSPORT // TIPPER LIFECYCLE MANAGEMENT</text>
+  
+  <!-- Tipper Truck Outline Graphic -->
+  <g transform="translate(180, 130)">
+    <!-- Cabin -->
+    <path d="M 60 40 L 95 40 L 115 65 L 115 95 L 60 95 Z" fill="#2563EB" stroke="#38BDF8" stroke-width="1.5"/>
+    <path d="M 70 48 L 92 48 L 105 65 L 70 65 Z" fill="#0F172A" opacity="0.7"/>
+    <!-- Tipper Bed / Cargo (Raised slightly) -->
+    <path d="M -15 25 L 50 40 L 50 95 L -15 95 Z" fill="url(#ost-amber)" stroke="#FDE68A" stroke-width="1.5"/>
+    <line x1="5" y1="35" x2="5" y2="90" stroke="#78350F" stroke-width="1.5"/>
+    <line x1="25" y1="40" x2="25" y2="90" stroke="#78350F" stroke-width="1.5"/>
+    <!-- Wheels -->
+    <circle cx="0" cy="98" r="14" fill="#1E293B" stroke="#94A3B8" stroke-width="2"/>
+    <circle cx="0" cy="98" r="6" fill="#38BDF8"/>
+    <circle cx="35" cy="98" r="14" fill="#1E293B" stroke="#94A3B8" stroke-width="2"/>
+    <circle cx="35" cy="98" r="6" fill="#38BDF8"/>
+    <circle cx="95" cy="98" r="14" fill="#1E293B" stroke="#94A3B8" stroke-width="2"/>
+    <circle cx="95" cy="98" r="6" fill="#38BDF8"/>
+  </g>
+
+  <!-- 4-Stage Lifecycle Stepper in Top Right -->
+  <g transform="translate(340, 135)">
+    <!-- Stage 1: Factory -->
+    <rect x="0" y="0" width="70" height="40" rx="6" fill="#1E293B" stroke="#10B981" stroke-width="1"/>
+    <text x="35" y="18" text-anchor="middle" fill="#34D399" font-family="monospace" font-size="9" font-weight="bold">STAGE 1</text>
+    <text x="35" y="32" text-anchor="middle" fill="#E2E8F0" font-family="sans-serif" font-size="9">Factory</text>
+    <line x1="70" y1="20" x2="80" y2="20" stroke="#10B981" stroke-width="2"/>
+
+    <!-- Stage 2: Showroom -->
+    <rect x="80" y="0" width="70" height="40" rx="6" fill="#1E293B" stroke="#2563EB" stroke-width="1.5"/>
+    <text x="115" y="18" text-anchor="middle" fill="#38BDF8" font-family="monospace" font-size="9" font-weight="bold">STAGE 2</text>
+    <text x="115" y="32" text-anchor="middle" fill="#FFFFFF" font-family="sans-serif" font-size="9">Showroom</text>
+    <line x1="150" y1="20" x2="160" y2="20" stroke="#2563EB" stroke-width="2"/>
+
+    <!-- Stage 3: Delivery -->
+    <rect x="160" y="0" width="70" height="40" rx="6" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
+    <text x="195" y="18" text-anchor="middle" fill="#FBBF24" font-family="monospace" font-size="9" font-weight="bold">STAGE 3</text>
+    <text x="195" y="32" text-anchor="middle" fill="#E2E8F0" font-family="sans-serif" font-size="9">Delivery</text>
+    <line x1="230" y1="20" x2="240" y2="20" stroke="#64748B" stroke-width="2"/>
+
+    <!-- Stage 4: Maintenance -->
+    <rect x="240" y="0" width="70" height="40" rx="6" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="275" y="18" text-anchor="middle" fill="#94A3B8" font-family="monospace" font-size="9" font-weight="bold">STAGE 4</text>
+    <text x="275" y="32" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="9">Service</text>
+
+    <!-- Insurance Compliance Pill -->
+    <rect x="0" y="55" width="310" height="35" rx="6" fill="#111827" stroke="#2563EB" stroke-width="1"/>
+    <text x="15" y="77" fill="#38BDF8" font-family="monospace" font-size="11">INSURANCE GATING: STRICT VALIDATION PASS</text>
+  </g>
+
+  <!-- Role-Based System Ledger -->
+  <g transform="translate(170, 260)">
+    <rect x="0" y="0" width="460" height="145" rx="8" fill="#111827" stroke="#334155" stroke-width="1"/>
+    <text x="20" y="30" fill="#38BDF8" font-family="monospace" font-size="11">ROLE: MANAGER • Vehicle MH-06-AZ-9921 Dispatched</text>
+    <text x="20" y="48" fill="#94A3B8" font-family="monospace" font-size="10">Chassis #OST-82910 • Factory Inspection Certified • Odometer: 14 km</text>
+    <line x1="20" y1="62" x2="440" y2="62" stroke="#1F2937" stroke-width="1"/>
+    <text x="20" y="82" fill="#34D399" font-family="monospace" font-size="11">ROLE: MECHANIC • Periodic Service Log #402</text>
+    <text x="20" y="100" fill="#94A3B8" font-family="monospace" font-size="10">Hydraulic Tipper Cylinder Greased • Brake Lining Checked • Next: 10,000 km</text>
+    <line x1="20" y1="114" x2="440" y2="114" stroke="#1F2937" stroke-width="1"/>
+    <text x="20" y="132" fill="#FBBF24" font-family="monospace" font-size="10">ROLE: OWNER / DRIVER • Trip Pass #TP-884 Approved via JSON State Engine</text>
+  </g>
+</svg>

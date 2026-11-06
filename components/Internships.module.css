@@ -1,0 +1,213 @@
+.internshipsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.internCard {
+  background-color: var(--white);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.internCard:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+}
+
+.cardTop {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid #F1F5F9;
+  padding-bottom: 18px;
+  margin-bottom: 16px;
+}
+
+.roleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.indexNumber {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+.formatTag {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 7px;
+  background-color: var(--light-blue);
+  border: 1px solid var(--primary-blue-border);
+  border-radius: var(--radius-xs);
+  color: var(--primary-blue);
+}
+
+.roleName {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  line-height: 1.25;
+}
+
+.orgRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--dark-text);
+  font-weight: 600;
+}
+
+.dateRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--muted-text);
+}
+
+.blueIcon {
+  color: var(--primary-blue);
+  flex-shrink: 0;
+}
+
+.cardBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.desc {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
+.actionButtonGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Internshala Student Partner Feature Banner */
+.ispBanner {
+  background-color: var(--white);
+  border: 1px solid var(--border-default);
+  border-left: 3px solid var(--primary-blue);
+  border-radius: var(--radius-md);
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+}
+
+.ispContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 700px;
+}
+
+.ispHeaderRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ispBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  background-color: var(--light-blue);
+  border: 1px solid var(--primary-blue-border);
+  border-radius: var(--radius-xs);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary-blue);
+}
+
+.ispDate {
+  font-size: 0.8rem;
+  color: var(--muted-text);
+}
+
+.ispTitle {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--dark-text);
+  margin-top: 4px;
+}
+
+.ispOrg {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--muted-text);
+}
+
+.ispDesc {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
+.ispActions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1080px) {
+  .internshipsGrid {
+    grid-template-columns: 1fr;
+  }
+  .ispBanner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ispActions {
+    flex-direction: row;
+    width: 100%;
+  }
+  .ispActions a {
+    flex: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .internCard {
+    padding: 20px 16px;
+  }
+  .ispBanner {
+    padding: 22px 18px;
+  }
+  .ispActions {
+    flex-direction: column;
+  }
+}
