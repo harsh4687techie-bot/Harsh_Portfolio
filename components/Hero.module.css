@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: calc(var(--header-height) + 20px);
-  padding-bottom: 40px;
+  padding-top: calc(var(--header-height) + 16px);
+  padding-bottom: 36px;
   position: relative;
   overflow: hidden;
 }
@@ -16,51 +16,63 @@
   justify-content: space-between;
   flex: 1;
   position: relative;
+  width: 100%;
 }
 
 /* Massive Signature Name Typography */
 .nameHeader {
   width: 100%;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: -50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: clamp(-36px, -3.2vw, -16px);
   position: relative;
   z-index: 1;
+  overflow: visible;
 }
 
 .massiveName {
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 9.5vw, 9.8rem);
+  font-size: clamp(2.5rem, 6.7vw, 7.8rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
   text-transform: uppercase;
   margin: 0;
   user-select: none;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 16px;
+  text-align: center;
+  max-width: 100%;
 }
 
 .firstNameOutlined {
-  -webkit-text-stroke: clamp(1.5px, 0.2vw, 2.5px) var(--text-black);
+  -webkit-text-stroke: clamp(1.4px, 0.18vw, 2.4px) var(--text-black);
   color: transparent;
   font-weight: 800;
   transition: all var(--transition-fast);
+  display: inline-block;
 }
 
 .lastNameSolid {
   color: var(--text-black);
   font-weight: 900;
+  display: inline-block;
 }
 
 /* 3-Column Stage Grid */
 .stageGrid {
   display: grid;
-  grid-template-columns: 1fr 1.25fr 1fr;
+  grid-template-columns: 1fr 1.2fr 1fr;
   align-items: flex-end;
   gap: 32px;
   position: relative;
   z-index: 2;
-  margin-top: 20px;
+  margin-top: 14px;
 }
 
 /* Left Column */
@@ -96,7 +108,7 @@
 
 .roleSubtitle {
   font-size: 0.88rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-muted);
 }
 
@@ -123,7 +135,7 @@
 .portraitWrapper {
   position: relative;
   width: 100%;
-  max-width: 440px;
+  max-width: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,25 +143,32 @@
 
 .portraitFrame {
   width: 100%;
-  height: clamp(380px, 48vh, 560px);
+  aspect-ratio: 4 / 5;
+  max-width: 380px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  background-color: var(--surface-dark);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  overflow: hidden;
-  position: relative;
 }
 
 .portraitImage {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: bottom center;
-  filter: grayscale(100%) contrast(105%);
-  transition: filter var(--transition-smooth);
+  object-fit: cover;
+  object-position: center 20%;
+  filter: grayscale(100%) contrast(104%);
+  transition: filter var(--transition-smooth), transform var(--transition-smooth);
+  display: block;
 }
 
-.portraitImage:hover {
+.portraitFrame:hover .portraitImage {
   filter: grayscale(0%) contrast(100%);
+  transform: scale(1.02);
 }
 
 .portraitGradientFade {
@@ -157,8 +176,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background: linear-gradient(to top, var(--bg-warm) 0%, rgba(247, 247, 245, 0) 100%);
+  height: 64px;
+  background: linear-gradient(to top, rgba(23, 23, 23, 0.45) 0%, rgba(23, 23, 23, 0) 100%);
   pointer-events: none;
 }
 
@@ -199,7 +218,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: var(--radius-full);
   background-color: #FFFFFF;
   border: 1px solid var(--border-light);
@@ -208,6 +227,7 @@
   font-weight: 600;
   color: var(--text-charcoal);
   transition: all var(--transition-fast);
+  min-height: 38px;
 }
 
 .socialItem:hover {
@@ -217,8 +237,8 @@
 }
 
 .socialDot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--text-muted);
   transition: background-color var(--transition-fast);
@@ -246,7 +266,7 @@
   font-size: 0.75rem;
   color: var(--text-muted);
   background-color: #FFFFFF;
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-light);
 }
@@ -259,7 +279,7 @@
 .scrollCue {
   display: flex;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 16px;
   position: relative;
   z-index: 2;
 }
@@ -274,9 +294,10 @@
   letter-spacing: 0.14em;
   color: var(--text-muted);
   transition: all var(--transition-fast);
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: var(--radius-full);
   background-color: transparent;
+  min-height: 44px;
 }
 
 .scrollBtn:hover {
@@ -292,8 +313,8 @@
   transform: translateY(3px);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1080px) {
+/* Responsive Adjustments across 1920px -> 360px */
+@media (max-width: 1100px) {
   .stageGrid {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
@@ -301,7 +322,7 @@
   .centerCol {
     order: 3;
     grid-column: span 2;
-    margin-top: -20px;
+    margin-top: -10px;
   }
   .leftCol {
     order: 1;
@@ -316,9 +337,6 @@
   .socialList {
     align-items: flex-start;
   }
-  .nameHeader {
-    margin-bottom: -20px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -329,21 +347,33 @@
   .centerCol {
     grid-column: span 1;
     order: 2;
+    margin-top: 0;
   }
   .leftCol {
     order: 1;
   }
   .rightCol {
     order: 3;
+    align-items: flex-start;
   }
   .portraitFrame {
-    height: 380px;
+    max-width: 320px;
   }
   .massiveName {
-    white-space: normal;
-    font-size: clamp(2.4rem, 12vw, 4.4rem);
+    font-size: clamp(2.2rem, 10.5vw, 4.4rem);
+    gap: 0 10px;
   }
   .nameHeader {
     margin-bottom: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .portraitFrame {
+    max-width: 280px;
+  }
+  .massiveName {
+    font-size: clamp(1.9rem, 11vw, 2.7rem);
+    line-height: 1.05;
   }
 }

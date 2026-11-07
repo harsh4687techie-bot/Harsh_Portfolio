@@ -97,7 +97,7 @@
 
 .copyText {
   font-size: 0.82rem;
-  color: var(--text-light-grey);
+  color: var(--text-muted);
 }
 
 @media (max-width: 640px) {

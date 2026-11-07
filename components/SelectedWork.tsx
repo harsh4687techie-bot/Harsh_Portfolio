@@ -125,6 +125,16 @@ export default function SelectedWork() {
               key={project.id}
               className={styles.projectCard}
               onClick={() => setSelectedProject(project)}
+              role="button"
+              tabIndex={0}
+              aria-haspopup="dialog"
+              aria-label={`Open ${project.title} case study`}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setSelectedProject(project);
+                }
+              }}
             >
               {/* Image Showcase Frame */}
               <div className={styles.imageFrame}>

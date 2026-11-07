@@ -90,6 +90,10 @@ export default function Contact({ onShowToast }: ContactProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (status === 'loading') {
+      return;
+    }
+
     const now = Date.now();
     if (now - lastSubmissionTime < 30000 && status === 'success') {
       onShowToast('Message already sent! Please wait a moment before sending another.');
@@ -283,8 +287,14 @@ export default function Contact({ onShowToast }: ContactProps) {
                   disabled={status === 'loading'}
                   maxLength={80}
                   required
+                  aria-invalid={!!errors.name}
+                  aria-describedby={errors.name ? 'contact-name-error' : undefined}
                 />
-                {errors.name && <span className={styles.errorText}>{errors.name}</span>}
+                {errors.name && (
+                  <span id="contact-name-error" className={styles.errorText} role="alert">
+                    {errors.name}
+                  </span>
+                )}
               </div>
 
               {/* Email Address */}
@@ -305,8 +315,14 @@ export default function Contact({ onShowToast }: ContactProps) {
                   disabled={status === 'loading'}
                   maxLength={100}
                   required
+                  aria-invalid={!!errors.email}
+                  aria-describedby={errors.email ? 'contact-email-error' : undefined}
                 />
-                {errors.email && <span className={styles.errorText}>{errors.email}</span>}
+                {errors.email && (
+                  <span id="contact-email-error" className={styles.errorText} role="alert">
+                    {errors.email}
+                  </span>
+                )}
               </div>
 
               {/* Subject */}
@@ -327,8 +343,14 @@ export default function Contact({ onShowToast }: ContactProps) {
                   disabled={status === 'loading'}
                   maxLength={120}
                   required
+                  aria-invalid={!!errors.subject}
+                  aria-describedby={errors.subject ? 'contact-subject-error' : undefined}
                 />
-                {errors.subject && <span className={styles.errorText}>{errors.subject}</span>}
+                {errors.subject && (
+                  <span id="contact-subject-error" className={styles.errorText} role="alert">
+                    {errors.subject}
+                  </span>
+                )}
               </div>
 
               {/* Message */}
@@ -349,8 +371,14 @@ export default function Contact({ onShowToast }: ContactProps) {
                   disabled={status === 'loading'}
                   maxLength={3000}
                   required
+                  aria-invalid={!!errors.message}
+                  aria-describedby={errors.message ? 'contact-message-error' : undefined}
                 />
-                {errors.message && <span className={styles.errorText}>{errors.message}</span>}
+                {errors.message && (
+                  <span id="contact-message-error" className={styles.errorText} role="alert">
+                    {errors.message}
+                  </span>
+                )}
               </div>
 
               {/* Feedback Status Alert */}

@@ -140,11 +140,25 @@
   opacity: 0.7;
 }
 
-/* Credentials Grid */
+/* Credentials Grid: 3 on Desktop, 2 on Tablet, 1 on Mobile */
 .credentialsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+}
+
+@media (max-width: 1080px) {
+  .credentialsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .credentialsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
 .credCard {
@@ -156,6 +170,8 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 16px;
+  height: 100%;
+  box-sizing: border-box;
   transition: all var(--transition-fast);
 }
 
@@ -202,6 +218,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  flex: 1;
 }
 
 .credOrg {
@@ -227,19 +244,26 @@
   margin: 0;
 }
 
+/* Action Buttons Container — Guaranteed ZERO Overflow */
 .credActions {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding-top: 12px;
+  flex-wrap: wrap;
+  padding-top: 14px;
   border-top: 1px solid var(--border-light);
+  width: 100%;
+  margin-top: auto;
+  box-sizing: border-box;
 }
 
 .actionBtn {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 6px 12px;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  min-height: 38px;
   border-radius: var(--radius-xs);
   background-color: var(--bg-warm);
   border: 1px solid var(--border-light);
@@ -249,12 +273,28 @@
   color: var(--text-black);
   transition: all var(--transition-fast);
   cursor: pointer;
+  flex: 1 1 calc(50% - 6px);
+  min-width: 0;
+  white-space: nowrap;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .actionBtn:hover {
   background-color: var(--text-black);
   color: #FFFFFF;
   border-color: var(--text-black);
+}
+
+/* Download button spans full width on row 2 */
+.actionBtnDownload {
+  flex: 1 1 100%;
+  background-color: #FFFFFF;
+}
+
+.actionBtnDownload:hover {
+  background-color: var(--text-black);
+  color: #FFFFFF;
 }
 
 @media (max-width: 640px) {

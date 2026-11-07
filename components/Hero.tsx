@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowUpRight, Github, Linkedin, Mail, FileText, ArrowDown } from 'lucide-react';
+import { ArrowUpRight, ArrowDown } from 'lucide-react';
 import { PERSONAL_INFO } from '@/data/portfolioData';
 import styles from './Hero.module.css';
 
@@ -20,10 +20,10 @@ export default function Hero() {
     : '/images/profile.jpg';
 
   return (
-    <section id="home" className={styles.heroSection}>
+    <section id="home" className={styles.heroSection} aria-label="Hero Introduction">
       <div className={`container ${styles.heroContainer}`}>
         
-        {/* Massive Signature Name Typography Header */}
+        {/* Massive Signature Name Typography Header — Never Clips */}
         <div className={styles.nameHeader}>
           <h1 className={styles.massiveName}>
             <span className={styles.firstNameOutlined}>HARSHVARDHAN</span>{' '}
@@ -71,13 +71,15 @@ export default function Hero() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={portraitSrc}
-                  alt="Harshvardhan Shinde — Backend Developer"
+                  alt="Harshvardhan Shinde — Backend Developer and AI/ML Engineer in Training"
                   className={styles.portraitImage}
+                  width={819}
+                  height={1024}
                   onError={() => setImageError(true)}
                   loading="eager"
                 />
+                <div className={styles.portraitGradientFade}></div>
               </div>
-              <div className={styles.portraitGradientFade}></div>
             </div>
           </div>
 

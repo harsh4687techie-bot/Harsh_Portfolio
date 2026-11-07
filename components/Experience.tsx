@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowUpRight, Eye, Download, Calendar, MapPin, Briefcase, ExternalLink } from 'lucide-react';
-import { EXPERIENCES, ExperienceItem } from '@/data/portfolioData';
+import { Eye, Download, ExternalLink } from 'lucide-react';
+import { EXPERIENCES } from '@/data/portfolioData';
 import { LightboxData } from './LightboxModal';
 import styles from './Experience.module.css';
 
@@ -29,9 +29,19 @@ export default function Experience({ onOpenLightbox }: ExperienceProps) {
   const activeExp = EXPERIENCES.find((e) => e.id === activeExpId) || EXPERIENCES[0];
   const activePreviewImage = EXPERIENCE_PREVIEWS[activeExpId] || '/projects/om-sai-transport.jpg';
   const isPdfPreview = activePreviewImage.endsWith('.pdf');
+  const isDocument = activePreviewImage.includes('/certificates/');
+
+  // Helper to extract a 2-letter monogram for organizations without an uploaded logo
+  const getMonogram = (name: string) => {
+    const parts = name.split(/\s+/).filter(Boolean);
+    if (parts.length >= 2) {
+      return (parts[0][0] + parts[1][0]).toUpperCase();
+    }
+    return name.slice(0, 2).toUpperCase();
+  };
 
   return (
-    <section id="experience" className={`section section-dark ${styles.experienceSection}`}>
+    <section id="experience" className={`section section-dark ${styles.experienceSection}`} aria-label="Experience & Roles">
       <div className="container">
         
         {/* Section Header with Watermark */}
@@ -43,7 +53,7 @@ export default function Experience({ onOpenLightbox }: ExperienceProps) {
             <span className={styles.expBadge}>Verified Responsibilities</span>
           </div>
           <p className="section-subtitle-editorial">
-            Hover or tap each organization to reveal engineering deliverables, responsibilities, and verified credentials.
+            Hover or tap each organization to reveal authentic branding, engineering deliverables, and verified credentials.
           </p>
         </div>
 
@@ -63,9 +73,11 @@ export default function Experience({ onOpenLightbox }: ExperienceProps) {
                   onClick={() => setActiveExpId(exp.id)}
                   role="tab"
                   aria-selected={isActive}
+                  aria-controls="experience-detail-panel"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
                       setActiveExpId(exp.id);
                     }
                   }}
@@ -73,6 +85,24 @@ export default function Experience({ onOpenLightbox }: ExperienceProps) {
                   <div className={styles.rowMain}>
                     <div className={styles.rowLeft}>
                       <span className={styles.rowIndex}>0{idx + 1}</span>
+                      
+                      {/* Organization Logo Thumbnail */}
+                      <div className={styles.rowLogoThumb}>
+                        {exp.logo ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={exp.logo}
+                            alt=""
+                            className={styles.rowLogoImg}
+                            loading="lazy"
+                          />
+                        ) : (
+                          <span className={styles.rowLogoFallback}>
+                            {getMonogram(exp.organization)}
+                          </span>
+                        )}
+                      </div>
+
                       <div>
                         <h3 className={styles.orgName}>{exp.organization}</h3>
                         <div className={styles.roleName}>{exp.role}</div>
@@ -92,11 +122,15 @@ export default function Experience({ onOpenLightbox }: ExperienceProps) {
           </div>
 
           {/* Right: Floating Interactive Preview & Details Panel */}
-          <div className={styles.previewCol}>
+          <div className={styles.previewCol} id="experience-detail-panel" role="tabpanel">
             <div className={styles.previewCard}>
               
-              {/* Media Preview Frame */}
-              <div className={styles.previewMediaFrame}>
+              {/* Media Preview Frame with Adaptive Aspect Ratio */}
+              <div
+                className={`${styles.previewMediaFrame} ${
+                  isDocument ? styles.previewMediaFrameDocument : ''
+                }`}
+              >
                 {isPdfPreview ? (
                   <div className={styles.pdfPreviewBox}>
                     <iframe
@@ -110,7 +144,10 @@ export default function Experience({ onOpenLightbox }: ExperienceProps) {
                   <img
                     src={activePreviewImage}
                     alt={`${activeExp.organization} Preview`}
-                    className={styles.previewImage}
+                    className={`${styles.previewImage} ${
+                      isDocument ? styles.previewImageDocument : ''
+                    }`}
+                    loading="lazy"
                   />
                 )}
 
@@ -121,16 +158,34 @@ export default function Experience({ onOpenLightbox }: ExperienceProps) {
                 </div>
               </div>
 
-              {/* In-depth Role Breakdown */}
+              {/* In-depth Role Breakdown with Organization Branding */}
               <div className={styles.cardDetails}>
                 <div className={styles.detailsHeader}>
-                  <div>
-                    <span className={styles.metaType}>{activeExp.type}</span>
-                    <h4 className={styles.detailsTitle}>{activeExp.role}</h4>
-                    <div className={styles.detailsOrg}>
-                      <span>{activeExp.organization}</span>
-                      <span>&bull;</span>
-                      <span>{activeExp.location}</span>
+                  <div className={styles.brandingGroup}>
+                    {/* Organization Logo Container */}
+                    <div className={styles.orgLogoContainer}>
+                      {activeExp.logo ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          src={activeExp.logo}
+                          alt={`${activeExp.organization} Logo`}
+                          className={styles.orgLogoImg}
+                        />
+                      ) : (
+                        <span className={styles.orgLogoFallback}>
+                          {getMonogram(activeExp.organization)}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className={styles.orgDetailsContent}>
+                      <span className={styles.metaType}>{activeExp.type}</span>
+                      <h4 className={styles.detailsTitle}>{activeExp.role}</h4>
+                      <div className={styles.detailsOrg}>
+                        <span className={styles.orgNameHighlight}>{activeExp.organization}</span>
+                        <span>&bull;</span>
+                        <span>{activeExp.location}</span>
+                      </div>
                     </div>
                   </div>
 
@@ -165,8 +220,9 @@ export default function Experience({ onOpenLightbox }: ExperienceProps) {
                         });
                       }}
                       title="Preview verified credential"
+                      aria-label={`Preview ${activeExp.organization} credential`}
                     >
-                      <Eye size={14} />
+                      <Eye size={15} />
                       <span>Preview ({activeExp.credential.fileType.toUpperCase()})</span>
                     </button>
 
@@ -174,22 +230,22 @@ export default function Experience({ onOpenLightbox }: ExperienceProps) {
                       href={activeExp.credential.filePath}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-editorial-secondary"
-                      style={{ color: '#FFFFFF', borderColor: '#404040' }}
+                      className={styles.credActionBtnDark}
                       title="Open in new tab"
+                      aria-label={`Open ${activeExp.organization} document in new tab`}
                     >
                       <span>New Tab</span>
-                      <ExternalLink size={13} />
+                      <ExternalLink size={14} />
                     </a>
 
                     <a
                       href={activeExp.credential.filePath}
                       download={activeExp.credential.fileName}
-                      className="btn-editorial-secondary"
-                      style={{ color: '#FFFFFF', borderColor: '#404040' }}
+                      className={styles.credActionBtnDark}
                       title="Download document"
+                      aria-label={`Download ${activeExp.organization} document`}
                     >
-                      <Download size={14} />
+                      <Download size={15} />
                     </a>
                   </div>
                 )}

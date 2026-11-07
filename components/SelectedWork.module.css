@@ -87,6 +87,12 @@
   transform: translateY(-4px);
 }
 
+.projectCard:focus-visible {
+  outline: 2px solid var(--text-black);
+  outline-offset: 6px;
+  border-radius: var(--radius-md);
+}
+
 .imageFrame {
   position: relative;
   width: 100%;
@@ -259,13 +265,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background-color: var(--bg-warm);
   border: 1px solid var(--border-light);
   color: var(--text-black);
   transition: all var(--transition-fast);
+  position: relative;
+}
+
+.githubIconBtn::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
 }
 
 .githubIconBtn:hover {

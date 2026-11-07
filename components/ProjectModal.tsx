@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useEffect, useCallback } from 'react';
-import { X, ExternalLink, Github, CheckCircle2, HelpCircle, Layers, Sparkles } from 'lucide-react';
+import React, { useEffect, useCallback, useRef } from 'react';
+import { X, ExternalLink, Github, CheckCircle2, HelpCircle } from 'lucide-react';
 import { ProjectItem } from '@/data/portfolioData';
 import styles from './ProjectModal.module.css';
 
@@ -11,10 +11,35 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
+  const modalRef = useRef<HTMLDivElement>(null);
+  const previousActiveElement = useRef<HTMLElement | null>(null);
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
+        return;
+      }
+
+      if (e.key === 'Tab' && modalRef.current) {
+        const focusable = modalRef.current.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
       }
     },
     [onClose]
@@ -22,15 +47,23 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   useEffect(() => {
     if (project) {
+      previousActiveElement.current = document.activeElement as HTMLElement | null;
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
-    } else {
-      document.body.style.overflow = '';
+
+      // Auto focus close button
+      const timer = setTimeout(() => {
+        const closeBtn = modalRef.current?.querySelector<HTMLButtonElement>('button[aria-label*="Close"]');
+        closeBtn?.focus();
+      }, 50);
+
+      return () => {
+        clearTimeout(timer);
+        document.body.style.overflow = '';
+        window.removeEventListener('keydown', handleKeyDown);
+        previousActiveElement.current?.focus();
+      };
     }
-    return () => {
-      document.body.style.overflow = '';
-      window.removeEventListener('keydown', handleKeyDown);
-    };
   }, [project, handleKeyDown]);
 
   if (!project) return null;
@@ -45,7 +78,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className={styles.container}>
+      <div className={styles.container} ref={modalRef}>
         {/* Modal Header */}
         <header className={styles.header}>
           <div className={styles.metaRow}>
@@ -58,7 +91,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             className={styles.closeBtn}
             aria-label="Close project modal (ESC)"
             title="Close (ESC)"
-            autoFocus
           >
             <X size={20} />
           </button>
@@ -73,6 +105,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               src={project.image}
               alt={`${project.title} Screenshot`}
               className={styles.screenshot}
+              loading="eager"
             />
           </div>
 
@@ -132,6 +165,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 rel="noopener noreferrer"
                 className="btn-editorial-primary"
                 title="Inspect repository on GitHub"
+                aria-label={`Open ${project.title} repository on GitHub`}
               >
                 <Github size={16} />
                 <span>GitHub Repository</span>
@@ -146,6 +180,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 rel="noopener noreferrer"
                 className="btn-editorial-secondary"
                 title="View live deployment"
+                aria-label={`Open ${project.title} live demo`}
               >
                 <span>Live Demo</span>
                 <ExternalLink size={14} />
@@ -161,4 +196,3 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     </div>
   );
 }
-

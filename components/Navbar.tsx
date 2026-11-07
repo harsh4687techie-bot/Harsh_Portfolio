@@ -70,6 +70,7 @@ export default function Navbar() {
         <a
           href="#home"
           className={styles.statusPill}
+          aria-label="Available for New Project — Return to top"
           onClick={(e) => {
             e.preventDefault();
             handleLinkClick('#home');

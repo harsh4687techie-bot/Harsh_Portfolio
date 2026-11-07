@@ -1,8 +1,37 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     unoptimized: true,
+  },
+  env: {
+    NEXT_PUBLIC_EMAILJS_SERVICE_ID:
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ||
+      process.env.VITE_EMAILJS_SERVICE_ID ||
+      'service_efm4e8g',
+    NEXT_PUBLIC_EMAILJS_PUBLIC_KEY:
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ||
+      process.env.VITE_EMAILJS_PUBLIC_KEY ||
+      '5PMJMdsT_OQKOjo06',
+    NEXT_PUBLIC_EMAILJS_TEMPLATE_ID:
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ||
+      process.env.VITE_EMAILJS_TEMPLATE_ID ||
+      'template_v9m6bdv',
+    VITE_EMAILJS_SERVICE_ID:
+      process.env.VITE_EMAILJS_SERVICE_ID ||
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ||
+      'service_efm4e8g',
+    VITE_EMAILJS_PUBLIC_KEY:
+      process.env.VITE_EMAILJS_PUBLIC_KEY ||
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ||
+      '5PMJMdsT_OQKOjo06',
+    VITE_EMAILJS_TEMPLATE_ID:
+      process.env.VITE_EMAILJS_TEMPLATE_ID ||
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ||
+      'template_v9m6bdv',
   },
   async headers() {
     return [

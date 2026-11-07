@@ -37,6 +37,7 @@ export interface ExperienceItem {
   period: string;
   location: string;
   description: string[];
+  logo?: string;
   credential?: {
     fileType: 'pdf' | 'jpg' | 'png';
     filePath: string;
@@ -247,6 +248,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: 'techspace-manager',
     role: 'Manager',
     organization: 'TechSpace Academy',
+    logo: '/logos/techspace-logo.png',
     type: 'Leadership',
     period: 'August 2024 – Present',
     location: 'Navi Mumbai, Maharashtra',
@@ -260,6 +262,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: 'nexspace-founder',
     role: 'Founder',
     organization: 'NexSpace',
+    logo: '/logos/nexspace-logo.png',
     type: 'Leadership',
     period: '2024 – Present',
     location: 'Navi Mumbai, Maharashtra',
@@ -273,6 +276,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: 'tipper-tech-lead',
     role: 'Technical Lead – Tipper Project',
     organization: 'TechSpace (Om Sai Transport)',
+    logo: '/logos/techspace-logo.png',
     type: 'Work Experience',
     period: 'Sep 2025 – Oct 2025',
     location: 'Navi Mumbai, Maharashtra',
@@ -293,6 +297,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: 'she-can-foundation',
     role: 'Python Development Internship',
     organization: 'She Can Foundation',
+    logo: '/logos/internshala-logo.png',
     type: 'Completed Internship',
     period: 'August 2026',
     location: 'Remote (via Internshala)',
@@ -331,6 +336,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: 'ai-asesro',
     role: 'Python Developer Intern',
     organization: 'AI Asesro',
+    logo: '/logos/ai-asesro-logo.png',
     type: 'Offer / Appointment',
     period: '01 May 2026 – 31 May 2026',
     location: 'Panvel, Navi Mumbai',
@@ -387,6 +393,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     id: 'internshala-isp',
     role: 'Internshala Student Partner',
     organization: 'Internshala',
+    logo: '/logos/internshala-logo.png',
     type: 'Offer / Appointment',
     period: 'November 2025 – January 2026',
     location: 'Campus Outreach',

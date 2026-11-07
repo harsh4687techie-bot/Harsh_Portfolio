@@ -33,31 +33,33 @@
   letter-spacing: -0.025em;
 }
 
+/* Editorial Blockquote / Tagline Box — Free of AI-Tell Side-Tabs */
 .taglineBox {
-  padding: 16px 20px;
+  padding: 18px 22px;
   border-radius: var(--radius-sm);
   background-color: var(--bg-warm);
   border: 1px solid var(--border-light);
-  border-left: 3px solid var(--text-black);
+  position: relative;
 }
 
 .taglineLabel {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 .taglineText {
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   font-weight: 600;
   color: var(--text-charcoal);
   margin: 0;
   font-style: italic;
+  line-height: 1.55;
 }
 
 .leadMeta {

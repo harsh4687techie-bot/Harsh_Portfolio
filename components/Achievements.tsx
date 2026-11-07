@@ -196,7 +196,7 @@ export default function Achievements({ onOpenLightbox }: AchievementsProps) {
                   <a
                     href={cred.filePath}
                     download={cred.fileName}
-                    className={styles.actionBtn}
+                    className={`${styles.actionBtn} ${styles.actionBtnDownload}`}
                     title={`Download ${cred.fileName}`}
                   >
                     <Download size={13} />
